@@ -30,11 +30,11 @@ RUN rosdep init && \
 
 # install ros-base packages
 RUN apt-get update && apt-get install -y \
-    ros-kinetic-ros-core=1.3.2-0* \
+    ros-kinetic-ros-base=1.3.2-0* \
     && rm -rf /var/lib/apt/lists/*
 
 RUN  apt-get update \
-     && apt-get install -q -y git vim iputils-ping libpng16-16\
+     && apt-get install -q -y git vim iputils-ping libpng16-16 python-tk\
      && apt-get clean \
      && pip install --upgrade pip \
      && pip install --no-cache-dir numba reeds_shepp matplotlib opencv-python scipy dubins typing pygame pyquaternion
